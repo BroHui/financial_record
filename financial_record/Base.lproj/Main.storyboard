@@ -22,8 +22,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="余额宝货币基金" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ec-IV-q0q">
-                                            <rect key="frame" x="16" y="8" width="288" height="27"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="余额宝货币基金" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ec-IV-q0q">
+                                            <rect key="frame" x="16" y="8" width="289" height="27"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="27" id="yOV-SX-Rg5"/>
                                             </constraints>
@@ -100,12 +100,14 @@
                                         <constraint firstItem="OXh-eu-frG" firstAttribute="top" secondItem="AJP-aA-8MF" secondAttribute="bottom" constant="12" id="NoI-r8-9nE"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="3f3-dy-aVK" secondAttribute="trailing" constant="30" id="R3a-he-cOr"/>
                                         <constraint firstItem="AJP-aA-8MF" firstAttribute="top" secondItem="6Ec-IV-q0q" secondAttribute="bottom" constant="8" id="WvC-4s-irO"/>
+                                        <constraint firstItem="6Ec-IV-q0q" firstAttribute="leading" secondItem="a1q-kr-OA3" secondAttribute="leadingMargin" constant="8" id="Wxh-rM-c4G"/>
                                         <constraint firstItem="3f3-dy-aVK" firstAttribute="top" secondItem="6Ec-IV-q0q" secondAttribute="bottom" constant="8" id="aSk-vE-uGH"/>
                                         <constraint firstItem="d8B-OH-SrC" firstAttribute="top" secondItem="XBt-ns-Qaf" secondAttribute="bottom" constant="12" id="c2M-Nm-Uds"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="o1i-cY-gnE" secondAttribute="trailing" constant="30" id="dwb-7f-kGG"/>
                                         <constraint firstItem="o1i-cY-gnE" firstAttribute="top" secondItem="3f3-dy-aVK" secondAttribute="bottom" constant="12" id="gjG-pG-cZx"/>
                                         <constraint firstItem="d8B-OH-SrC" firstAttribute="centerX" secondItem="a1q-kr-OA3" secondAttribute="centerX" id="qPg-Ff-1zf"/>
                                         <constraint firstItem="AJP-aA-8MF" firstAttribute="leading" secondItem="a1q-kr-OA3" secondAttribute="leadingMargin" constant="30" id="s0L-UW-Dfc"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="6Ec-IV-q0q" secondAttribute="trailing" constant="7" id="uWC-jQ-i2s"/>
                                         <constraint firstItem="OXh-eu-frG" firstAttribute="leading" secondItem="a1q-kr-OA3" secondAttribute="leadingMargin" constant="30" id="ylI-vg-f47"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -117,12 +119,35 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="理财产品" id="p0A-dg-mta">
-                        <barButtonItem key="rightBarButtonItem" title="新增" id="hv8-ur-Uq3"/>
+                        <barButtonItem key="rightBarButtonItem" title="新增" id="hv8-ur-Uq3">
+                            <connections>
+                                <segue destination="POP-RF-r7l" kind="push" identifier="addFinancialItem" id="vuW-mF-WiD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kEG-hX-yqZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="630" y="386"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Wz3-5Y-0kc">
+            <objects>
+                <viewController id="POP-RF-r7l" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EYQ-8z-D2Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zf0-y4-Kch"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1tu-5F-1g1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0pP-0D-oOj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WCz-gS-3YX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1018" y="386"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1rI-OC-JcE">

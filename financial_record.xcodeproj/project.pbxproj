@@ -11,7 +11,6 @@
 		282F73451C520CB3000F279B /* financialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282F73431C520CB3000F279B /* financialTableViewCell.swift */; };
 		282F73471C520CCF000F279B /* financialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282F73461C520CCF000F279B /* financialTableViewController.swift */; };
 		289F120B1C5209E5007F6E08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289F120A1C5209E5007F6E08 /* AppDelegate.swift */; };
-		289F120D1C5209E5007F6E08 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289F120C1C5209E5007F6E08 /* ViewController.swift */; };
 		289F12101C5209E5007F6E08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 289F120E1C5209E5007F6E08 /* Main.storyboard */; };
 		289F12121C5209E5007F6E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 289F12111C5209E5007F6E08 /* Assets.xcassets */; };
 		289F12151C5209E5007F6E08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 289F12131C5209E5007F6E08 /* LaunchScreen.storyboard */; };
@@ -42,7 +41,6 @@
 		282F73461C520CCF000F279B /* financialTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = financialTableViewController.swift; sourceTree = "<group>"; };
 		289F12071C5209E5007F6E08 /* financial_record.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = financial_record.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		289F120A1C5209E5007F6E08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		289F120C1C5209E5007F6E08 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		289F120F1C5209E5007F6E08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		289F12111C5209E5007F6E08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		289F12141C5209E5007F6E08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				289F120A1C5209E5007F6E08 /* AppDelegate.swift */,
-				289F120C1C5209E5007F6E08 /* ViewController.swift */,
 				289F120E1C5209E5007F6E08 /* Main.storyboard */,
 				289F12111C5209E5007F6E08 /* Assets.xcassets */,
 				289F12131C5209E5007F6E08 /* LaunchScreen.storyboard */,
@@ -340,7 +337,6 @@
 			files = (
 				282F73441C520CB3000F279B /* financialTableViewCell.swift in Sources */,
 				282F73471C520CCF000F279B /* financialTableViewController.swift in Sources */,
-				289F120D1C5209E5007F6E08 /* ViewController.swift in Sources */,
 				289F120B1C5209E5007F6E08 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

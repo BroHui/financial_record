@@ -12,12 +12,6 @@ class financialTableViewCell: UITableViewCell {
     
     // MARK: Properties
     
-    @IBOutlet weak var financialRateLabel: UILabel!
-    @IBOutlet weak var financialNameLabel: UILabel!
-    @IBOutlet weak var totalMoney: UILabel!
-    @IBOutlet weak var endDay: UILabel!
-    @IBOutlet weak var endEarnMoney: UILabel!
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -16,7 +16,9 @@
 		289F12151C5209E5007F6E08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 289F12131C5209E5007F6E08 /* LaunchScreen.storyboard */; };
 		289F12201C5209E5007F6E08 /* financial_recordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289F121F1C5209E5007F6E08 /* financial_recordTests.swift */; };
 		289F122B1C5209E5007F6E08 /* financial_recordUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289F122A1C5209E5007F6E08 /* financial_recordUITests.swift */; };
-		846032117A48553D95C1D1BA /* Pods_financial_record.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7B1E72C4C1A3464FB826A4 /* Pods_financial_record.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		28A805131C54E1940011BDCA /* addFinancialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A805121C54E1940011BDCA /* addFinancialTableViewController.swift */; };
+		28A805141C54E1940011BDCA /* addFinancialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A805121C54E1940011BDCA /* addFinancialTableViewController.swift */; };
+		846032117A48553D95C1D1BA /* Pods_financial_record.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7B1E72C4C1A3464FB826A4 /* Pods_financial_record.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,7 @@
 		289F12261C5209E5007F6E08 /* financial_recordUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = financial_recordUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		289F122A1C5209E5007F6E08 /* financial_recordUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = financial_recordUITests.swift; sourceTree = "<group>"; };
 		289F122C1C5209E5007F6E08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28A805121C54E1940011BDCA /* addFinancialTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addFinancialTableViewController.swift; sourceTree = "<group>"; };
 		3D7B1E72C4C1A3464FB826A4 /* Pods_financial_record.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_financial_record.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8F2218F58BAE3472D0C4535 /* Pods-financial_record.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-financial_record.release.xcconfig"; path = "Pods/Target Support Files/Pods-financial_record/Pods-financial_record.release.xcconfig"; sourceTree = "<group>"; };
 		FE55D1548414152D81165787 /* Pods-financial_record.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-financial_record.debug.xcconfig"; path = "Pods/Target Support Files/Pods-financial_record/Pods-financial_record.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +117,7 @@
 				289F12161C5209E5007F6E08 /* Info.plist */,
 				282F73431C520CB3000F279B /* financialTableViewCell.swift */,
 				282F73461C520CCF000F279B /* financialTableViewController.swift */,
+				28A805121C54E1940011BDCA /* addFinancialTableViewController.swift */,
 			);
 			path = financial_record;
 			sourceTree = "<group>";
@@ -224,6 +228,7 @@
 				TargetAttributes = {
 					289F12061C5209E5007F6E08 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = YZNH927DW9;
 					};
 					289F121A1C5209E5007F6E08 = {
 						CreatedOnToolsVersion = 7.2;
@@ -336,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				282F73441C520CB3000F279B /* financialTableViewCell.swift in Sources */,
+				28A805131C54E1940011BDCA /* addFinancialTableViewController.swift in Sources */,
 				282F73471C520CCF000F279B /* financialTableViewController.swift in Sources */,
 				289F120B1C5209E5007F6E08 /* AppDelegate.swift in Sources */,
 			);
@@ -345,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28A805141C54E1940011BDCA /* addFinancialTableViewController.swift in Sources */,
 				289F12201C5209E5007F6E08 /* financial_recordTests.swift in Sources */,
 				282F73451C520CB3000F279B /* financialTableViewCell.swift in Sources */,
 			);

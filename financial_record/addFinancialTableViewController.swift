@@ -15,7 +15,11 @@ class addFinancialTableViewController: UITableViewController {
 
     @IBOutlet weak var startDateLabel: UILabel!
     @IBOutlet weak var startDatePicker: UIDatePicker!
-    var datePickerHidden = true
+    @IBOutlet weak var endDatePciker: UIDatePicker!
+    @IBOutlet weak var endDateLabel: UILabel!
+    
+    var startdatePickerHidden = true
+    var endDatePickerHidden = true
     
     // MARK: - Static value
     enum sectionName: Int {
@@ -84,6 +88,29 @@ class addFinancialTableViewController: UITableViewController {
         }    
     }
     */
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == sectionName.DATE.rawValue {
+            if indexPath.row == 0 {
+                startToggleDatePicker()
+            } else if indexPath.row == 2 {
+                endToggleDatePicker()
+            }
+        }
+        
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        print("indexpath: \(indexPath.row)")
+        if startdatePickerHidden && indexPath.section == sectionName.DATE.rawValue && indexPath.row == 1 {
+            return 0
+        } else if endDatePickerHidden && indexPath.section == sectionName.DATE.rawValue && indexPath.row == 3 {
+            return 0
+        } else {
+            return super.tableView(tableView, heightForRowAtIndexPath: indexPath)
+        }
+    }
 
     /*
     // Override to support rearranging the table view.
@@ -100,13 +127,6 @@ class addFinancialTableViewController: UITableViewController {
     }
     */
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 0 && indexPath.row == 0 {
-            toggleDatePicker()
-        }
-        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
-    }
-
     /*
     // MARK: - Navigation
 
@@ -118,19 +138,43 @@ class addFinancialTableViewController: UITableViewController {
     */
     
     // MARK: - DatetimePicker
-    func toggleDatePicker() {
-        datePickerHidden = !datePickerHidden
-        startDatePicker.hidden = datePickerHidden
+    func startToggleDatePicker() {
+        startdatePickerHidden = !startdatePickerHidden
+        startDatePicker.hidden = startdatePickerHidden
         tableView.beginUpdates()
         tableView.endUpdates()
     }
     
-    func datePickerChanged() {
+    func endToggleDatePicker() {
+        endDatePickerHidden = !endDatePickerHidden
+        endDatePciker.hidden = endDatePickerHidden
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
+    
+    func startDatePickerChanged() {
         // 选择的日期显示在Detail样式上
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let pickDate = dateFormatter.stringFromDate(startDatePicker.date)
         startDateLabel.text = pickDate
     }
+    
+    func endDatePickerChanged() {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let pickDate = dateFormatter.stringFromDate(endDatePciker.date)
+        endDateLabel.text = pickDate
+    }
+    
+    @IBAction func startDatePickeValue(sender: UIDatePicker) {
+        startDatePickerChanged()
+    }
+    
+    @IBAction func endDatePickeValue(sender: UIDatePicker) {
+        endDatePickerChanged()
+    }
+    
+    
 
 }

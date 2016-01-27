@@ -9,14 +9,19 @@
 import UIKit
 
 
-class addFinancialTableViewController: UITableViewController {
-    
+class addFinancialTableViewController: UITableViewController, UITextFieldDelegate {
+
     // MARK: Properties
 
+    @IBOutlet weak var financialNameText: UITextField!
+    @IBOutlet weak var rateText: UITextField!
+    @IBOutlet weak var moneyText: UITextField!
     @IBOutlet weak var startDateLabel: UILabel!
     @IBOutlet weak var startDatePicker: UIDatePicker!
     @IBOutlet weak var endDatePciker: UIDatePicker!
     @IBOutlet weak var endDateLabel: UILabel!
+    
+    weak var myfin: Finanical?
     
     var startdatePickerHidden = true
     var endDatePickerHidden = true
@@ -34,6 +39,10 @@ class addFinancialTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        financialNameText.delegate = self
+        rateText.delegate = self
+        moneyText.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -127,15 +136,40 @@ class addFinancialTableViewController: UITableViewController {
     }
     */
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        let financialName = financialNameText.text
+        let rate = rateText.text
+        let money = moneyText.text
+        let startDate = startDatePicker.date
+        let endDate = endDatePciker.date
+        
+        // 验证输入完整性
+        if financialName == "" || rate == "" || money == "" {
+            showMeTheAlert("请填写完所有数据后再保存")
+        }
+        
+        print("Finanical: \(financialName), \(rate), \(money), \(startDate), \(endDate)")
+       
+//        self.myfin = Finanical(name: financialName, rate: <#T##String#>, money: <#T##String#>, startDate: <#T##NSDate#>, endDate: <#T##NSDate#>)
+        
     }
-    */
+    
+    // MARK: - UITextFieldDelegate
+    func textFieldDidEndEditing(textField: UITextField) {
+        
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        // 隐藏键盘
+        textField.resignFirstResponder()
+        return true
+    }
     
     // MARK: - DatetimePicker
     func startToggleDatePicker() {
@@ -173,6 +207,55 @@ class addFinancialTableViewController: UITableViewController {
     
     @IBAction func endDatePickeValue(sender: UIDatePicker) {
         endDatePickerChanged()
+    }
+    
+    // MARK: - Action
+    
+//    @IBAction func newFinancialSave(sender: UIBarButtonItem) {
+//        let financialName = financialNameText.text
+//        let rate = rateText.text
+//        let money = moneyText.text
+//        let startDate = startDatePicker.date
+//        let endDate = endDatePciker.date
+//        
+//        // 验证输入完整性
+//        if financialName == "" || rate == "" || money == "" {
+//            showMeTheAlert("请填写完所有数据后再保存")
+//            return
+//        }
+//        
+//        print("Finanical: \(financialName), \(rate), \(money), \(startDate), \(endDate)")
+//        
+//        let db = FMDatabase(path: appDelegate.databasePath)
+//        if !db.open() {
+//            showMeTheAlert("无法打开数据库")
+//            return
+//        }
+//        
+//        do {
+//            let insertSQL = "INSERT INTO \(appDelegate.TABLE_NAME) (name, rate, money, startDate, endDate) VALUES(?, ?, ?, ?, ?)"
+//            try db.executeUpdate(insertSQL, values: [financialName!, rate!, money!, startDate, endDate])
+//            showMeTheAlert("插入数据库成功")
+//            
+//        } catch let error as NSError {
+//            print("failed: \(error.localizedDescription)")
+//            showMeTheAlert("插入数据库失败")
+//        }
+//        
+//        db.close()
+//        
+//    }
+    
+    // MARK: Alertview
+    func showMeTheAlert(message: String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    // MARK: Segue
+    @IBAction func cancel(sender: UIBarButtonItem) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     

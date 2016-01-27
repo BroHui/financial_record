@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import FMDB
 
 class financialTableViewController: UITableViewController {
+    
+    let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,5 +92,12 @@ class financialTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: Segue
+    
+    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+    }
+    
+
 
 }

@@ -7,15 +7,23 @@
 //
 
 import UIKit
+import FMDB
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    // 数据库路径
+    var databasePath = String()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        self.initDatabase()
+        self.createDatabase()
+        
         return true
     }
 
@@ -39,6 +47,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    // MARK: - FMDB
+    let DATABASE_FILE_NAME = "financial.sqlite"
+    let TABLE_NAME = "myfin"
+    
+    func initDatabase() -> Bool {
+        let docPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first! as String
+        let dbFile = "/" + DATABASE_FILE_NAME
+        self.databasePath = docPath.stringByAppendingString(dbFile)
+        print(self.databasePath)
+        return true
+    }
+    
+    func createDatabase() {
+        let db = FMDatabase(path: databasePath)
+        if !db.open() {
+            print("无法打开数据库，请检查")
+            return
+        }
+        
+        do {
+            let checkDBExisted = "SELECT * FROM '\(TABLE_NAME)' LIMIT 0,1"
+            try db?.executeQuery(checkDBExisted, values: nil)
+            print("database is already existed, skip")
+            return
+        } catch _ as NSError {
+            print("create db")
+        }
+        
+        do {
+            let createSQL = "CREATE TABLE '\(TABLE_NAME)' ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                "'name' VARCHAR(20), 'rate' FLOAT(20), 'money' INTEGER, 'startDate' VARCHAR(15), 'endDate' VARCHAR(15))"
+            try db?.executeUpdate(createSQL, values: nil)
+            
+        } catch let error as NSError {
+            print("failed: \(error.localizedDescription)")
+            print("创建数据库失败")
+        }
+        db.close()
     }
 
 

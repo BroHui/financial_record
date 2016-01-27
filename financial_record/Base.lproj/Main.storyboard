@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OBZ-Eo-yyG" id="a1q-kr-OA3">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="119.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="余额宝货币基金" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ec-IV-q0q">
@@ -121,7 +121,7 @@
                     <navigationItem key="navigationItem" title="理财产品" id="p0A-dg-mta">
                         <barButtonItem key="rightBarButtonItem" title="新增" id="hv8-ur-Uq3">
                             <connections>
-                                <segue destination="E8d-wa-ahB" kind="push" id="VkX-wj-FYH"/>
+                                <segue destination="baC-Af-XwO" kind="modal" identifier="addNewFinanical" id="VkX-wj-FYH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -145,7 +145,7 @@
                                         <rect key="frame" x="0.0" y="99" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="emj-Hn-8Ff" id="Hx8-aE-6zx">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h3M-pQ-hnq">
@@ -154,7 +154,7 @@
                                                         <constraint firstAttribute="width" constant="97" id="idv-by-adl"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="理财产品名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blU-Kp-qgw">
                                                     <rect key="frame" x="16" y="11" width="102" height="21"/>
@@ -174,11 +174,11 @@
                                         <rect key="frame" x="0.0" y="143" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NDm-Vl-LkV" id="Qzq-F6-dvK">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="年化利率" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fex-I5-77N">
-                                                    <rect key="frame" x="15" y="11" width="68" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="年化利率(%)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fex-I5-77N">
+                                                    <rect key="frame" x="15" y="11" width="106" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -189,7 +189,7 @@
                                                         <constraint firstAttribute="width" constant="97" id="f24-PX-KTY"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -203,7 +203,7 @@
                                         <rect key="frame" x="0.0" y="187" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="77G-ZX-Ih2" id="ce6-c1-LWb">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="投入资金" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFs-Ab-NBR">
@@ -218,7 +218,7 @@
                                                         <constraint firstAttribute="width" constant="97" id="Teh-bD-52k"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -236,18 +236,18 @@
                                         <rect key="frame" x="0.0" y="267" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7ah-l2-Quy" id="hsZ-F6-sYb">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="份额生效日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Tc7-m1-Id8">
-                                                    <rect key="frame" x="15" y="12" width="96" height="19.5"/>
+                                                    <rect key="frame" x="15" y="12" width="96" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="选择" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0JT-2U-df5">
-                                                    <rect key="frame" x="273" y="12" width="32" height="19.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="今日" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0JT-2U-df5">
+                                                    <rect key="frame" x="273" y="12" width="32" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
@@ -260,11 +260,11 @@
                                         <rect key="frame" x="0.0" y="311" width="320" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H2r-P7-ycu" id="a5k-BR-SJa">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="139.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="139"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="tfe-8i-CwD">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="139"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="475324614.53682703">
                                                         <!--2016-01-24 10:36:54 +0000-->
                                                     </date>
@@ -285,18 +285,18 @@
                                         <rect key="frame" x="0.0" y="451" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gkg-vz-lsi" id="gCA-zb-GdS">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="理财到期日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V8v-Zf-NBs">
-                                                    <rect key="frame" x="15" y="12" width="96" height="19.5"/>
+                                                    <rect key="frame" x="15" y="12" width="96" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="选择" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2v8-SC-9Du">
-                                                    <rect key="frame" x="273" y="12" width="32" height="19.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="今日" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2v8-SC-9Du">
+                                                    <rect key="frame" x="273" y="12" width="32" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -309,11 +309,11 @@
                                         <rect key="frame" x="0.0" y="495" width="320" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eph-PA-40S" id="5SH-qV-YGW">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="139.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="139"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="WCl-KV-JAA">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="139.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="139"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="475422365.96592802">
                                                         <!--2016-01-25 13:46:05 +0000-->
                                                     </date>
@@ -339,20 +339,34 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="添加理财产品" id="85A-Vb-Sfv">
-                        <barButtonItem key="rightBarButtonItem" title="保存" id="oJD-Nk-B0W"/>
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="xiZ-JM-z3Y">
+                            <connections>
+                                <action selector="cancel:" destination="E8d-wa-ahB" id="xIe-oX-CVO"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="oJD-Nk-B0W">
+                            <connections>
+                                <segue destination="QvG-TO-Hej" kind="unwind" unwindAction="unwindToMealList:" id="dvW-hr-C8p"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="900"/>
                     <connections>
                         <outlet property="endDateLabel" destination="2v8-SC-9Du" id="IjK-uw-X0C"/>
                         <outlet property="endDatePciker" destination="WCl-KV-JAA" id="akA-E9-GEW"/>
+                        <outlet property="financialNameText" destination="h3M-pQ-hnq" id="VQY-VD-5ni"/>
+                        <outlet property="moneyText" destination="7qU-hk-0zZ" id="SKo-QM-oZT"/>
+                        <outlet property="rateText" destination="AVz-2W-omJ" id="z68-pb-J0p"/>
                         <outlet property="startDateLabel" destination="0JT-2U-df5" id="kca-Ka-M1q"/>
                         <outlet property="startDatePicker" destination="tfe-8i-CwD" id="KNv-y3-sW4"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eeS-9a-H9r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="QvG-TO-Hej" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1053" y="386"/>
+            <point key="canvasLocation" x="1585" y="386"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1rI-OC-JcE">
@@ -371,6 +385,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8B7-h2-tEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="197.86666666666667" y="386.24000000000001"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ePp-17-tVd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="baC-Af-XwO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xUP-f3-x34">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="E8d-wa-ahB" kind="relationship" relationship="rootViewController" id="opt-WS-IVo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mRD-bK-EFg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1053" y="386"/>
         </scene>
     </scenes>
 </document>

@@ -10,6 +10,8 @@
 		282F73441C520CB3000F279B /* financialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282F73431C520CB3000F279B /* financialTableViewCell.swift */; };
 		282F73451C520CB3000F279B /* financialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282F73431C520CB3000F279B /* financialTableViewCell.swift */; };
 		282F73471C520CCF000F279B /* financialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282F73461C520CCF000F279B /* financialTableViewController.swift */; };
+		284588581C5875F300F664D6 /* Finanical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284588571C5875F300F664D6 /* Finanical.swift */; };
+		284588591C5875F300F664D6 /* Finanical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284588571C5875F300F664D6 /* Finanical.swift */; };
 		289F120B1C5209E5007F6E08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289F120A1C5209E5007F6E08 /* AppDelegate.swift */; };
 		289F12101C5209E5007F6E08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 289F120E1C5209E5007F6E08 /* Main.storyboard */; };
 		289F12121C5209E5007F6E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 289F12111C5209E5007F6E08 /* Assets.xcassets */; };
@@ -41,6 +43,7 @@
 /* Begin PBXFileReference section */
 		282F73431C520CB3000F279B /* financialTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = financialTableViewCell.swift; sourceTree = "<group>"; };
 		282F73461C520CCF000F279B /* financialTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = financialTableViewController.swift; sourceTree = "<group>"; };
+		284588571C5875F300F664D6 /* Finanical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Finanical.swift; sourceTree = "<group>"; };
 		289F12071C5209E5007F6E08 /* financial_record.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = financial_record.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		289F120A1C5209E5007F6E08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		289F120F1C5209E5007F6E08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,6 +88,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2845885B1C58767100F664D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				284588571C5875F300F664D6 /* Finanical.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2845885C1C58767B00F664D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				282F73431C520CB3000F279B /* financialTableViewCell.swift */,
+				289F120E1C5209E5007F6E08 /* Main.storyboard */,
+				289F12111C5209E5007F6E08 /* Assets.xcassets */,
+				289F12131C5209E5007F6E08 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		2845885D1C58768E00F664D6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				282F73461C520CCF000F279B /* financialTableViewController.swift */,
+				28A805121C54E1940011BDCA /* addFinancialTableViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		2845885E1C5876A500F664D6 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				289F120A1C5209E5007F6E08 /* AppDelegate.swift */,
+				289F12161C5209E5007F6E08 /* Info.plist */,
+			);
+			name = SupportFiles;
+			sourceTree = "<group>";
+		};
 		289F11FE1C5209E5007F6E08 = {
 			isa = PBXGroup;
 			children = (
@@ -110,14 +150,10 @@
 		289F12091C5209E5007F6E08 /* financial_record */ = {
 			isa = PBXGroup;
 			children = (
-				289F120A1C5209E5007F6E08 /* AppDelegate.swift */,
-				289F120E1C5209E5007F6E08 /* Main.storyboard */,
-				289F12111C5209E5007F6E08 /* Assets.xcassets */,
-				289F12131C5209E5007F6E08 /* LaunchScreen.storyboard */,
-				289F12161C5209E5007F6E08 /* Info.plist */,
-				282F73431C520CB3000F279B /* financialTableViewCell.swift */,
-				282F73461C520CCF000F279B /* financialTableViewController.swift */,
-				28A805121C54E1940011BDCA /* addFinancialTableViewController.swift */,
+				2845885E1C5876A500F664D6 /* SupportFiles */,
+				2845885D1C58768E00F664D6 /* Controller */,
+				2845885C1C58767B00F664D6 /* View */,
+				2845885B1C58767100F664D6 /* Model */,
 			);
 			path = financial_record;
 			sourceTree = "<group>";
@@ -343,6 +379,7 @@
 				282F73441C520CB3000F279B /* financialTableViewCell.swift in Sources */,
 				28A805131C54E1940011BDCA /* addFinancialTableViewController.swift in Sources */,
 				282F73471C520CCF000F279B /* financialTableViewController.swift in Sources */,
+				284588581C5875F300F664D6 /* Finanical.swift in Sources */,
 				289F120B1C5209E5007F6E08 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,6 +391,7 @@
 				28A805141C54E1940011BDCA /* addFinancialTableViewController.swift in Sources */,
 				289F12201C5209E5007F6E08 /* financial_recordTests.swift in Sources */,
 				282F73451C520CB3000F279B /* financialTableViewCell.swift in Sources */,
+				284588591C5875F300F664D6 /* Finanical.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

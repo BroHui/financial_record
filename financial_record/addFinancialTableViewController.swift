@@ -215,43 +215,6 @@ class addFinancialTableViewController: UITableViewController, UITextFieldDelegat
         endDatePickerChanged()
     }
     
-    // MARK: - Action
-    
-//    @IBAction func newFinancialSave(sender: UIBarButtonItem) {
-//        let financialName = financialNameText.text
-//        let rate = rateText.text
-//        let money = moneyText.text
-//        let startDate = startDatePicker.date
-//        let endDate = endDatePciker.date
-//        
-//        // 验证输入完整性
-//        if financialName == "" || rate == "" || money == "" {
-//            showMeTheAlert("请填写完所有数据后再保存")
-//            return
-//        }
-//        
-//        print("Finanical: \(financialName), \(rate), \(money), \(startDate), \(endDate)")
-//        
-//        let db = FMDatabase(path: appDelegate.databasePath)
-//        if !db.open() {
-//            showMeTheAlert("无法打开数据库")
-//            return
-//        }
-//        
-//        do {
-//            let insertSQL = "INSERT INTO \(appDelegate.TABLE_NAME) (name, rate, money, startDate, endDate) VALUES(?, ?, ?, ?, ?)"
-//            try db.executeUpdate(insertSQL, values: [financialName!, rate!, money!, startDate, endDate])
-//            showMeTheAlert("插入数据库成功")
-//            
-//        } catch let error as NSError {
-//            print("failed: \(error.localizedDescription)")
-//            showMeTheAlert("插入数据库失败")
-//        }
-//        
-//        db.close()
-//        
-//    }
-    
     // MARK: Alertview
     func showMeTheAlert(message: String) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: UIAlertControllerStyle.Alert)

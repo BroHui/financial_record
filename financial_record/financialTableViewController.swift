@@ -12,6 +12,9 @@ import FMDB
 class financialTableViewController: UITableViewController {
     
     let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
+    // MARK: 属性
+    var fins = [Finanical]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +24,9 @@ class financialTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
          self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        
+        // 预加载数据库中的数据渲染tableview
+        loadDataFromDatabase()
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,13 +43,19 @@ class financialTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return fins.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("financialCell", forIndexPath: indexPath) as! financialTableViewCell
-
+        
         // Configure the cell...
+        let thisFin = fins[indexPath.row]
+        let thousandMoney = Int(thisFin.money!)! / 1000
+        cell.nameLabel.text = thisFin.name
+        cell.rateLabel.text = "\(thisFin.rate!)%"
+        cell.moneyLabel.text = "\(thousandMoney)K"
+        cell.earndLabel.text = "0"
 
         return cell
     }
@@ -93,14 +105,72 @@ class financialTableViewController: UITableViewController {
     }
     */
     
+    // MARK: 预加载
+    func loadDataFromDatabase() {
+        let db = FMDatabase(path: appDelegate.databasePath)
+        if !db.open() {
+            showMeTheAlert("无法打开数据库")
+            return
+        }
+        
+        do {
+            let querySQL = "SELECT * FROM \(appDelegate.TABLE_NAME)"
+            let rs = try db.executeQuery(querySQL, values: nil)
+            
+            while rs.next() {
+//                let id = rs.intForColumn("id")
+                let name = rs.stringForColumn("name")
+                let rate = rs.stringForColumn("rate")
+                let money = rs.stringForColumn("money")
+                let startDate = rs.dateForColumn("startDate")
+                let endDate = rs.dateForColumn("endDate")
+                print("Finanical: \(name), \(rate), \(money), \(startDate), \(endDate)")
+                let fin = Finanical(name: name!, rate: rate!, money: money!, startDate: startDate, endDate: endDate)!
+                fins.append(fin)
+            }
+            
+        } catch let error as NSError {
+            print("failed: \(error.localizedDescription)")
+        }
+        
+        db.close()
+    }
+    
     // MARK: Segue
     
     @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
-//        let sourceViewController = sender.sourceViewController as? addFinancialTableViewController, myfin = sourceViewController?.myfin {
-//            print(sourceViewController?.myfin?.name)
-//        }
+        if let sourceViewController = sender.sourceViewController as? addFinancialTableViewController, myfin = sourceViewController.myfin {
+           
+            // 插入数据库
+            let db = FMDatabase(path: appDelegate.databasePath)
+            if !db.open() {
+                showMeTheAlert("无法打开数据库")
+                return
+            }
+    
+            do {
+                let insertSQL = "INSERT INTO \(appDelegate.TABLE_NAME) (name, rate, money, startDate, endDate) VALUES(?, ?, ?, ?, ?)"
+                try db.executeUpdate(insertSQL, values: [myfin.name!, myfin.rate!, myfin.money!, myfin.startDate, myfin.endDate])
+    
+            } catch let error as NSError {
+                print("failed: \(error.localizedDescription)")
+                showMeTheAlert("插入数据库失败")
+            }
+            
+            db.close()
+            
+            // 插入tableview
+            let newIndexPath = NSIndexPath(forRow: fins.count, inSection: 0)
+            fins.append(myfin)
+            tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+        }
     }
     
-
+    // MARK: Alertview
+    func showMeTheAlert(message: String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
 
 }

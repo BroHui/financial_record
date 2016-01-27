@@ -10,19 +10,25 @@ import UIKit
 
 class Finanical: NSObject {
     
-    let name: String?
-    let rate: String?
-    let money: String?
-    let startDate: NSDate
-    let endDate: NSDate
+    var name: String?
+    var rate: String?
+    var money: String?
+    var startDate: NSDate
+    var endDate: NSDate
     
-    init(name: String, rate: String, money: String, startDate: NSDate, endDate: NSDate) {
+    init?(name: String, rate: String, money: String, startDate: NSDate, endDate: NSDate) {
         self.name = name
         self.rate = rate
         self.money = money
         
         self.startDate = startDate
         self.endDate = endDate
+        
+        super.init()
+        
+        if name.isEmpty || rate.isEmpty || money.isEmpty {
+            return nil
+        }
     }
 
 }

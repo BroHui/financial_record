@@ -21,10 +21,11 @@ class addFinancialTableViewController: UITableViewController, UITextFieldDelegat
     @IBOutlet weak var endDatePciker: UIDatePicker!
     @IBOutlet weak var endDateLabel: UILabel!
     
-    weak var myfin: Finanical?
     
     var startdatePickerHidden = true
     var endDatePickerHidden = true
+
+    var myfin: Finanical?
     
     // MARK: - Static value
     enum sectionName: Int {
@@ -155,8 +156,7 @@ class addFinancialTableViewController: UITableViewController, UITextFieldDelegat
         }
         
         print("Finanical: \(financialName), \(rate), \(money), \(startDate), \(endDate)")
-       
-//        self.myfin = Finanical(name: financialName, rate: <#T##String#>, money: <#T##String#>, startDate: <#T##NSDate#>, endDate: <#T##NSDate#>)
+        self.myfin = Finanical(name: financialName!, rate: rate!, money: money!, startDate: startDate, endDate: endDate)
         
     }
     

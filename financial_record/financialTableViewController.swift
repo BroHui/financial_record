@@ -96,6 +96,9 @@ class financialTableViewController: UITableViewController {
     // MARK: Segue
     
     @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+//        let sourceViewController = sender.sourceViewController as? addFinancialTableViewController, myfin = sourceViewController?.myfin {
+//            print(sourceViewController?.myfin?.name)
+//        }
     }
     
 

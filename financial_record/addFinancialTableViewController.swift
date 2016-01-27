@@ -138,12 +138,9 @@ class addFinancialTableViewController: UITableViewController, UITextFieldDelegat
     */
     
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        
+   
+    // 预先检查用户输入的数据是否为空值
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
         let financialName = financialNameText.text
         let rate = rateText.text
         let money = moneyText.text
@@ -153,10 +150,19 @@ class addFinancialTableViewController: UITableViewController, UITextFieldDelegat
         // 验证输入完整性
         if financialName == "" || rate == "" || money == "" {
             showMeTheAlert("请填写完所有数据后再保存")
+            return false
         }
         
         print("Finanical: \(financialName), \(rate), \(money), \(startDate), \(endDate)")
         self.myfin = Finanical(name: financialName!, rate: rate!, money: money!, startDate: startDate, endDate: endDate)
+        
+        return true
+    }
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
         
     }
     

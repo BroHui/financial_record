@@ -69,17 +69,35 @@ class financialTableViewController: UITableViewController {
     }
     */
 
-    /*
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
+            let theFin = fins[indexPath.row]
+           
+            // 从数据库删除
+            let db = FMDatabase(path: appDelegate.databasePath)
+            if !db.open() {
+                showMeTheAlert("无法打开数据库")
+                return
+            }
+            
+            do {
+//                print("Finanical: \(theFin.name), \(theFin.rate), \(theFin.money), \(theFin.startDate), \(theFin.endDate)")
+                let deleteSQL = "DELETE FROM \(appDelegate.TABLE_NAME) WHERE name=? and rate=? and money=? and startDate=?"
+                try db.executeUpdate(deleteSQL, values: [theFin.name!, theFin.rate!, theFin.money!, theFin.startDate])
+            } catch let error as NSError {
+                print("failed: \(error.localizedDescription)")
+                showMeTheAlert("删除失败")
+            }
+            db.close()
+            
+            fins.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
 
     /*
     // Override to support rearranging the table view.

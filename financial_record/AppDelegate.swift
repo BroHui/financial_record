@@ -21,6 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        // 设置全局导航栏样式
+        let orangeColor = UIColor(colorLiteralRed: 255/255.0, green: 128/255.0, blue: 0/255.0, alpha: 1.0)
+        UINavigationBar.appearance().barTintColor = orangeColor
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        let titleDict = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        UINavigationBar.appearance().titleTextAttributes = titleDict
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+       
+        // 数据库初始化
         self.initDatabase()
         self.createDatabase()
         

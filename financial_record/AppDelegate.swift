@@ -79,7 +79,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         do {
             let createSQL = "CREATE TABLE '\(TABLE_NAME)' ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
-                "'name' VARCHAR(20), 'rate' FLOAT(20), 'money' INTEGER, 'startDate' VARCHAR(15), 'endDate' VARCHAR(15))"
+                "'name' VARCHAR(20), 'rate' FLOAT(20), 'money' INTEGER, 'earned' FLOAT, 'startDate' VARCHAR(15), 'endDate' VARCHAR(15)," +
+                " 'days' INTEGER)"
             try db?.executeUpdate(createSQL, values: nil)
             
         } catch let error as NSError {

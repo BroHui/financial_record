@@ -23,7 +23,8 @@ class financialTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-         self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        self.navigationItem.leftBarButtonItem?.title = "编辑"
         
         // 预加载数据库中的数据渲染tableview
         loadDataFromDatabase()
@@ -55,7 +56,7 @@ class financialTableViewController: UITableViewController {
         cell.nameLabel.text = thisFin.name
         cell.rateLabel.text = "\(thisFin.rate!)%"
         cell.moneyLabel.text = "\(thousandMoney)K"
-        cell.earndLabel.text = "0"
+        cell.earndLabel.text = "¥\(thisFin.earned!)"
 
         return cell
     }
@@ -149,8 +150,8 @@ class financialTableViewController: UITableViewController {
             }
     
             do {
-                let insertSQL = "INSERT INTO \(appDelegate.TABLE_NAME) (name, rate, money, startDate, endDate) VALUES(?, ?, ?, ?, ?)"
-                try db.executeUpdate(insertSQL, values: [myfin.name!, myfin.rate!, myfin.money!, myfin.startDate, myfin.endDate])
+                let insertSQL = "INSERT INTO \(appDelegate.TABLE_NAME) (name, rate, money, startDate, endDate, earned, days) VALUES(?, ?, ?, ?, ?, ?, ?)"
+                try db.executeUpdate(insertSQL, values: [myfin.name!, myfin.rate!, myfin.money!, myfin.startDate, myfin.endDate, myfin.earned!, myfin.day!])
     
             } catch let error as NSError {
                 print("failed: \(error.localizedDescription)")

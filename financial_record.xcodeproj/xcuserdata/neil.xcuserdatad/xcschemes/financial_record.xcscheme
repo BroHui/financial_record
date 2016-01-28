@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "289F12061C5209E5007F6E08"
-               BuildableName = "financial_record.app"
+               BuildableName = "&#x7406;&#x8d22;&#x624b;&#x672d;.app"
                BlueprintName = "financial_record"
                ReferencedContainer = "container:financial_record.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "289F12061C5209E5007F6E08"
-            BuildableName = "financial_record.app"
+            BuildableName = "&#x7406;&#x8d22;&#x624b;&#x672d;.app"
             BlueprintName = "financial_record"
             ReferencedContainer = "container:financial_record.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "289F12061C5209E5007F6E08"
-            BuildableName = "financial_record.app"
+            BuildableName = "&#x7406;&#x8d22;&#x624b;&#x672d;.app"
             BlueprintName = "financial_record"
             ReferencedContainer = "container:financial_record.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "289F12061C5209E5007F6E08"
-            BuildableName = "financial_record.app"
+            BuildableName = "&#x7406;&#x8d22;&#x624b;&#x672d;.app"
             BlueprintName = "financial_record"
             ReferencedContainer = "container:financial_record.xcodeproj">
          </BuildableReference>

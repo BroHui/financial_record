@@ -29,6 +29,16 @@ class financialTableViewController: UITableViewController {
         // 预加载数据库中的数据渲染tableview
         loadDataFromDatabase()
     }
+   
+    // Tableview的编辑模式，navgition左侧按钮显示为中文
+    override func setEditing(editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        if editing {
+            self.editButtonItem().title = "完成"
+        } else {
+            self.editButtonItem().title = "编辑"
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -97,6 +107,11 @@ class financialTableViewController: UITableViewController {
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
+    }
+   
+    // tablview左滑显示删除文字
+    override func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String? {
+        return "删除"
     }
 
     /*

@@ -70,7 +70,15 @@ class financialTableViewController: UITableViewController {
         cell.nameLabel.text = thisFin.name
         cell.rateLabel.text = "\(thisFin.rate!)%"
         cell.moneyLabel.text = "\(thousandMoney)K"
-        cell.earndLabel.text = "¥\(thisFin.earned!)"
+       
+        var earnedStr = "¥0"
+        if thisFin.earned! > 1000 {
+            let thousandEarned = Int(thisFin.earned!) / 1000
+            earnedStr = "¥\(thousandEarned)K"
+        } else {
+            earnedStr = "¥\(thisFin.earned!)"
+        }
+        cell.earndLabel.text = "\(earnedStr)"
 
         return cell
     }

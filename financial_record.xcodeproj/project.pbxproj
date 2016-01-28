@@ -12,6 +12,7 @@
 		282F73471C520CCF000F279B /* financialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282F73461C520CCF000F279B /* financialTableViewController.swift */; };
 		284588581C5875F300F664D6 /* Finanical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284588571C5875F300F664D6 /* Finanical.swift */; };
 		284588591C5875F300F664D6 /* Finanical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284588571C5875F300F664D6 /* Finanical.swift */; };
+		284C8ABC1C5A092E00C30825 /* setttingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284C8ABB1C5A092E00C30825 /* setttingTableViewController.swift */; };
 		289F120B1C5209E5007F6E08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289F120A1C5209E5007F6E08 /* AppDelegate.swift */; };
 		289F12101C5209E5007F6E08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 289F120E1C5209E5007F6E08 /* Main.storyboard */; };
 		289F12121C5209E5007F6E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 289F12111C5209E5007F6E08 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		282F73431C520CB3000F279B /* financialTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = financialTableViewCell.swift; sourceTree = "<group>"; };
 		282F73461C520CCF000F279B /* financialTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = financialTableViewController.swift; sourceTree = "<group>"; };
 		284588571C5875F300F664D6 /* Finanical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Finanical.swift; sourceTree = "<group>"; };
+		284C8ABB1C5A092E00C30825 /* setttingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = setttingTableViewController.swift; sourceTree = "<group>"; };
 		289F12071C5209E5007F6E08 /* 理财手札.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "理财手札.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		289F120A1C5209E5007F6E08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		289F120F1C5209E5007F6E08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			children = (
 				282F73461C520CCF000F279B /* financialTableViewController.swift */,
 				28A805121C54E1940011BDCA /* addFinancialTableViewController.swift */,
+				284C8ABB1C5A092E00C30825 /* setttingTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				282F73441C520CB3000F279B /* financialTableViewCell.swift in Sources */,
+				284C8ABC1C5A092E00C30825 /* setttingTableViewController.swift in Sources */,
 				28A805131C54E1940011BDCA /* addFinancialTableViewController.swift in Sources */,
 				282F73471C520CCF000F279B /* financialTableViewController.swift in Sources */,
 				284588581C5875F300F664D6 /* Finanical.swift in Sources */,

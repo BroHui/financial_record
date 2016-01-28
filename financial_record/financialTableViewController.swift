@@ -26,10 +26,14 @@ class financialTableViewController: UITableViewController {
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
         self.navigationItem.leftBarButtonItem?.title = "编辑"
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         // 预加载数据库中的数据渲染tableview
         loadDataFromDatabase()
+        tableView.reloadData()
     }
-   
+    
     // Tableview的编辑模式，navgition左侧按钮显示为中文
     override func setEditing(editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
@@ -146,6 +150,9 @@ class financialTableViewController: UITableViewController {
             showMeTheAlert("无法打开数据库")
             return
         }
+       
+        // 清空Modal
+        fins.removeAll(keepCapacity: false)
         
         do {
             let querySQL = "SELECT * FROM \(appDelegate.TABLE_NAME)"

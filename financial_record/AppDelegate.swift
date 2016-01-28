@@ -98,7 +98,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         db.close()
     }
-
-
+    
+    func dropDatabase() {
+        let db = FMDatabase(path: databasePath)
+        if !db.open() {
+            print("无法打开数据库，请检查")
+            return
+        }
+        
+        do {
+            let dropSQL = "DROP TABLE '\(TABLE_NAME)'"
+            try db?.executeUpdate(dropSQL, values: nil)
+            
+        } catch let error as NSError {
+            print("failed: \(error.localizedDescription)")
+            print("删除表失败")
+        }
+        db.close()
+    }
 }
 

@@ -66,19 +66,14 @@ class financialTableViewController: UITableViewController {
         
         // Configure the cell...
         let thisFin = fins[indexPath.row]
-        let thousandMoney = Int(thisFin.money!)! / 1000
         cell.nameLabel.text = thisFin.name
         cell.rateLabel.text = "\(thisFin.rate!)%"
-        cell.moneyLabel.text = "\(thousandMoney)K"
+        
+        let money = String(format: "%.1f", Float(thisFin.money!)! / 10000)
+        cell.moneyLabel.text = "\(money)万"
        
-        var earnedStr = "¥0"
-        if thisFin.earned! > 1000 {
-            let thousandEarned = Int(thisFin.earned!) / 1000
-            earnedStr = "¥\(thousandEarned)K"
-        } else {
-            earnedStr = "¥\(thisFin.earned!)"
-        }
-        cell.earndLabel.text = "\(earnedStr)"
+        let earned = String(format: "%.2f", Float(thisFin.earned!) / 10000)
+        cell.earndLabel.text = "\(earned)万"
 
         return cell
     }
@@ -141,15 +136,19 @@ class financialTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "finDetailSegue" {
+            let destVC = segue.destinationViewController as? finDetailTableViewController
+            let indexPath = self.tableView.indexPathForSelectedRow!
+            let selectFin = fins[indexPath.row]
+            destVC?.myfin = selectFin
+        }
     }
-    */
     
     // MARK: 预加载
     func loadDataFromDatabase() {

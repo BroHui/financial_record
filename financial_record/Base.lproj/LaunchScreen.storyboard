@@ -18,19 +18,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="毛笔字" translatesAutoresizingMaskIntoConstraints="NO" id="OJo-tX-IK0">
-                                <rect key="frame" x="20" y="495" width="267" height="85"/>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="毛笔字" translatesAutoresizingMaskIntoConstraints="NO" id="OJo-tX-IK0">
+                                <rect key="frame" x="167" y="472" width="267" height="85"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="7NN-Xq-b2N"/>
+                                    <constraint firstAttribute="width" constant="267" id="j4u-Qu-a9t"/>
                                     <constraint firstAttribute="height" constant="85" id="jxR-qb-lj1"/>
                                     <constraint firstAttribute="width" constant="267" id="wco-6q-fRT"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="7NN-Xq-b2N"/>
+                                        <exclude reference="j4u-Qu-a9t"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="7NN-Xq-b2N"/>
+                                        <include reference="j4u-Qu-a9t"/>
+                                        <exclude reference="jxR-qb-lj1"/>
+                                        <exclude reference="wco-6q-fRT"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="OJo-tX-IK0" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="Sdh-Sv-noy"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="OJo-tX-IK0" secondAttribute="bottom" constant="20" id="JrF-WX-mtq"/>
+                            <constraint firstItem="OJo-tX-IK0" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="OI6-w6-Osb"/>
+                            <constraint firstItem="OJo-tX-IK0" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="Sdh-Sv-noy">
+                                <variation key="heightClass=regular-widthClass=compact" constant="47"/>
+                            </constraint>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="OJo-tX-IK0" secondAttribute="bottom" constant="20" id="dCA-1u-I52"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="OI6-w6-Osb"/>
+                                <exclude reference="JrF-WX-mtq"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="OI6-w6-Osb"/>
+                                <exclude reference="Sdh-Sv-noy"/>
+                                <include reference="JrF-WX-mtq"/>
+                                <exclude reference="dCA-1u-I52"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>

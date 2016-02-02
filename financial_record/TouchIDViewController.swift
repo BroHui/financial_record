@@ -38,7 +38,6 @@ class TouchIDViewController: UIViewController {
     
     // MARK: - Auth
     func authenticateUser() {
-        print("hello")
         let context = LAContext()
         var error: NSError?
         let reason = "请验证您的指纹"
@@ -50,9 +49,7 @@ class TouchIDViewController: UIViewController {
                 (success: Bool, error: NSError?) in
                 if success {
                     print("指纹验证成功")
-                    NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                        self.dismissViewControllerAnimated(true, completion: nil)
-                    })
+                    self.jumpToAuthedView()
                 } else {
                     print(error?.localizedDescription)
                     switch error?.code {
@@ -75,6 +72,7 @@ class TouchIDViewController: UIViewController {
         } else {
             // 不支持指纹的机型，做其他处理
             print(error?.localizedDescription)
+            self.jumpToAuthedView()
         }
         
     }
@@ -96,6 +94,12 @@ class TouchIDViewController: UIViewController {
         passwordAlert.addAction(cancelButton)
         passwordAlert.addAction(okButton)
         self.presentViewController(passwordAlert, animated: true, completion: nil)
+    }
+    
+    func jumpToAuthedView() {
+        NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        })
     }
   
     

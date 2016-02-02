@@ -174,7 +174,7 @@ class financialTableViewController: UITableViewController {
                 let money = rs.stringForColumn("money")
                 let startDate = rs.dateForColumn("startDate")
                 let endDate = rs.dateForColumn("endDate")
-                print("Finanical: \(name), \(rate), \(money), \(startDate), \(endDate)")
+//                print("Finanical: \(name), \(rate), \(money), \(startDate), \(endDate)")
                 let fin = Finanical(name: name!, rate: rate!, money: money!, startDate: startDate, endDate: endDate)!
                 fins.append(fin)
             }

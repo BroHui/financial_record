@@ -37,7 +37,7 @@ class Finanical: NSObject {
         if earnedDays < 0 {
             earnedDays = 0
         }
-        print("earnedDays: \(earnedDays)")
+//        print("earnedDays: \(earnedDays)")
         self.day = Int(earnedDays)
         
         // 计算收益金额

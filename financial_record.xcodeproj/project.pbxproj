@@ -23,7 +23,7 @@
 		289F122B1C5209E5007F6E08 /* financial_recordUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289F122A1C5209E5007F6E08 /* financial_recordUITests.swift */; };
 		28A805131C54E1940011BDCA /* addFinancialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A805121C54E1940011BDCA /* addFinancialTableViewController.swift */; };
 		28A805141C54E1940011BDCA /* addFinancialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A805121C54E1940011BDCA /* addFinancialTableViewController.swift */; };
-		846032117A48553D95C1D1BA /* Pods_financial_record.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7B1E72C4C1A3464FB826A4 /* Pods_financial_record.framework */; };
+		846032117A48553D95C1D1BA /* Pods_financial_record.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7B1E72C4C1A3464FB826A4 /* Pods_financial_record.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -274,7 +274,6 @@
 				TargetAttributes = {
 					289F12061C5209E5007F6E08 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = YZNH927DW9;
 					};
 					289F121A1C5209E5007F6E08 = {
 						CreatedOnToolsVersion = 7.2;

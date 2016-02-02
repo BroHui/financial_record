@@ -20,6 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+      
+        // 跳转指纹解锁view
+        let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+        let touchIDViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("touchIDVC")
+        self.window?.makeKeyAndVisible()
+        self.window?.rootViewController?.presentViewController(touchIDViewController, animated: false, completion: nil)
         
         // 设置全局导航栏样式
         let orangeColor = UIColor(colorLiteralRed: 255/255.0, green: 128/255.0, blue: 0/255.0, alpha: 1.0)
